@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&family=Unbounded:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="image_slot.js"></script>
+<style>
+  *{box-sizing:border-box}
+  body{margin:0;background:#ffffff;font-family:'Inter',system-ui,sans-serif;color:#2B303A;-webkit-font-smoothing:antialiased}
+  a{color:#0B1E3F;text-decoration:none;transition:color .25s cubic-bezier(.4,0,.2,1),opacity .25s cubic-bezier(.4,0,.2,1)}
+  a:hover{color:#C8A95A}
+  ::selection{background:#C8A95A;color:#0B1E3F}
+  .wm{position:absolute;font-family:'Unbounded',sans-serif;font-weight:600;line-height:.7;pointer-events:none;user-select:none}
+</style>
+</helmet>
+
+
+<article style="width:100%;overflow:hidden">
+
+<!-- ===== COVER ===== -->
+<section style="position:relative;min-height:100vh;background:#0B1E3F;display:flex;flex-direction:column">
+  <div style="position:relative;pointer-events:none;flex:1;display:flex;flex-direction:column;padding:44px clamp(28px,6vw,88px) 56px;color:#fff">
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:2.5px;color:rgba(255,255,255,.75)">
+      <span>EVER‑APPROPRIATE ETIQUETTE INSTITUTE</span>
+      <span style="text-align:right">A PROPOSAL FOR<br><span style="color:#C8A95A">A&amp;L BERG FOUNDATION</span></span>
+    </div><div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;max-width:1100px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:3px;color:#C8A95A;margin-bottom:26px">CONFIDENCE&nbsp;·&nbsp;PRESENCE&nbsp;·&nbsp;RELATIONSHIPS</div>
+      <h1 style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:clamp(44px,10vw,128px);line-height:.94;letter-spacing:-2.5px;margin:0 0 30px">From access<br>to <span style="color:#C8A95A">impact.</span></h1>
+      <p style="font-family:'Inter';font-weight:400;font-size:clamp(17px,2.2vw,24px);line-height:1.5;max-width:600px;margin:0;color:rgba(255,255,255,.9)">Relational intelligence, professional presence, and cultural capital for emerging arts professionals.</p>
+    </div>
+    
+  </div>
+  <div style="position:relative;pointer-events:none;border-top:1px solid rgba(255,255,255,.22);padding:22px clamp(28px,6vw,88px);display:flex;flex-wrap:wrap;gap:14px 40px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:1.5px;color:rgba(255,255,255,.72)">
+    <span><span style="color:rgba(255,255,255,.45)">IN PERSON</span>&nbsp;&nbsp;MAY 5, 2027 · NEW YORK CITY</span>
+    <span><span style="color:rgba(255,255,255,.45)">VIRTUAL</span>&nbsp;&nbsp;WINTER · DATE TBD</span>
+    <span style="margin-left:auto;color:#C8A95A">PREPARED BY NARETHA HOPSON</span>
+  </div>
+</section>
+
+<!-- ===== QUOTE BAND ===== -->
+<section style="background:#C8A95A;padding:clamp(52px,7vw,96px) clamp(28px,6vw,88px)">
+  <div style="max-width:1080px;margin:0 auto;display:flex;flex-wrap:wrap;gap:clamp(32px,5vw,72px);align-items:center">
+    <div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:clamp(90px,15vw,190px);line-height:.9;letter-spacing:-5px;color:#0B1E3F;flex:none">85<span style="font-size:.42em;letter-spacing:-2px">%</span></div>
+    <div style="flex:1 1 380px;min-width:300px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:rgba(11,30,63,.65);margin-bottom:20px">THE PREMISE</div>
+      <p style="font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(19px,2.4vw,30px);line-height:1.24;letter-spacing:-.5px;margin:0;color:#0B1E3F">of career success comes from well developed people skills. Only 15 percent comes from technical ability.</p>
+      <div style="margin-top:30px;max-width:560px">
+        <div style="display:flex;height:8px;border-radius:9999px;overflow:hidden">
+          <div style="width:85%;background:#0B1E3F"></div>
+          <div style="width:15%;background:rgba(11,30,63,.25)"></div>
+        </div>
+        <div style="display:flex;justify-content:space-between;margin-top:12px;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;color:rgba(11,30,63,.7)"><span>PEOPLE SKILLS · 85</span><span>TECHNICAL · 15</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KEY FIGURES ===== -->
+<section style="border-bottom:1px solid rgba(11,30,63,.1)">
+  <div style="max-width:1080px;margin:0 auto;padding:clamp(44px,6vw,72px) clamp(28px,6vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:36px 44px">
+    <sc-for list="{{ figures }}" as="f" hint-placeholder-count="4">
+      <div style="border-left:1px solid rgba(11,30,63,.18);padding-left:22px">
+        <div style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(40px,5vw,62px);line-height:1;color:#0B1E3F;margin-bottom:14px">{{ f.big }}</div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:1.5px;color:#C8A95A">{{ f.label }}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ===== 01 THE DIFFERENCE MAKER ===== -->
+<section style="position:relative;max-width:1080px;margin:0 auto;padding:clamp(72px,10vw,124px) clamp(28px,6vw,72px)">
+  <span class="wm" style="top:40px;right:48px;font-size:clamp(120px,20vw,240px);color:rgba(11,30,63,.05)">01</span>
+  <div style="position:relative;max-width:900px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:22px;height:1px;background:#C8A95A"></span>THE DIFFERENCE MAKER</div>
+    <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(30px,4.8vw,54px);line-height:1.04;letter-spacing:-1px;color:#0B1E3F;margin:0 0 28px;max-width:840px">Talent gets you invited. Power skills decide what happens once you arrive.</h2>
+    <div style="max-width:680px;margin:0 0 56px">
+      <p style="font-size:18px;line-height:1.75;margin:0 0 18px;color:#3a4150">Every reception, patron dinner, and art fair aisle is full of people whose careers changed because of a single conversation, and people who stood three feet away and let that conversation happen to someone else. The difference was almost never talent. It was confidence, and the relational fluency to act on it.</p>
+      <p style="font-size:18px;line-height:1.75;margin:0 0 18px;color:#3a4150">A pattern has emerged in your own rooms. Some of the most talented members of each cohort step into beautifully curated spaces with extremely high net worth individuals, serious collectors, patrons of the arts, and executive directors of major museums, and they hold back. They stand at the edge of the reception. They speak only to the people they arrived with. They leave without a single new relationship. It is not a lack of ambition or intelligence. It is a gap in confidence, in fluency, and in the belief that conversation itself is a form of value.</p>
+      <p style="font-size:18px;line-height:1.75;margin:0;color:#3a4150">That gap is the space this engagement is designed to close. Relational skill is not a soft skill. In the art world, it is cultural capital: the currency that turns a room full of strangers into a network, a network into patronage, and patronage into a sustained career. When emerging professionals see it that way, showing up fully stops feeling like performance and starts feeling like stewardship of their own future.</p>
+    </div>
+  </div>
+
+  <!-- conversion gap: ascending steps -->
+  <div style="position:relative;font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:#0B1E3F;margin-bottom:26px">THE CONVERSION GAP</div>
+  <div style="position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:end;margin-bottom:22px">
+    <sc-for list="{{ conversionSteps }}" as="s" hint-placeholder-count="4">
+      <div style="display:flex;flex-direction:column;justify-content:flex-end;gap:14px;height:{{ s.h }}">
+        <span style="font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1px;color:#9aa0aa">0{{ s.n }}</span>
+        <div data-anim="bar" style="background:{{ s.bg }};border-radius:6px 6px 0 0;flex:1;display:flex;align-items:flex-end;padding:16px;min-height:60px">
+          <span style="font-family:'Unbounded',sans-serif;font-size:clamp(15px,1.8vw,21px);color:{{ s.fg }};line-height:1.05">{{ s.label }}</span>
+        </div>
+      </div>
+    </sc-for>
+  </div>
+  <p style="position:relative;font-size:15px;line-height:1.6;color:#5a6270;margin:0 0 60px;font-family:'JetBrains Mono',monospace;letter-spacing:.5px">ACCESS → ENGAGEMENT → RELATIONSHIP → OPPORTUNITY. EACH STEP IS EARNED, NEVER AUTOMATIC.</p>
+
+  <div style="position:relative;border-top:1px solid rgba(11,30,63,.12);padding-top:44px">
+    <p style="font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(19px,2.5vw,26px);color:#0B1E3F;margin:0 0 26px">The arts ecosystem is relational.</p>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px">
+      <sc-for list="{{ ecosystem }}" as="row" hint-placeholder-count="5">
+        <span style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(11,30,63,.22);border-radius:9999px;padding:10px 18px;font-size:14.5px;color:#0B1E3F"><span style="width:6px;height:6px;background:#C8A95A;border-radius:50%"></span>{{ row }}</span>
+      </sc-for>
+    </div>
+    <p style="font-size:17px;line-height:1.75;max-width:720px;margin:0;color:#3a4150">These are not networking contacts. They are <span style="color:#0B1E3F;font-weight:500">cultural capital</span>: knowledge, credibility, perspective, trust, and connection that help professionals understand how the field operates and build careers with greater agency.</p>
+  </div>
+</section>
+
+<!-- ===== 02 CENTRAL PREMISE + JOURNEY ===== -->
+<section style="position:relative;background:#0B1E3F;color:#fff;padding:clamp(72px,10vw,124px) clamp(28px,6vw,72px);overflow:hidden">
+  <span class="wm" style="top:30px;left:40px;font-size:clamp(120px,20vw,240px);color:rgba(255,255,255,.045)">02</span>
+  <div style="position:relative;max-width:1080px;margin:0 auto">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:22px;height:1px;background:#C8A95A"></span>THE CENTRAL PREMISE</div>
+    <h2 style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:clamp(40px,8vw,110px);line-height:.96;letter-spacing:-2px;margin:0 0 34px">Confidence<br>comes <span style="color:#C8A95A">first.</span></h2>
+    <p style="font-size:18px;line-height:1.7;max-width:640px;margin:0 0 60px;color:rgba(255,255,255,.85)">Before participants can leverage conversational tools, professional norms, or relationship‑building strategies, they must believe they have a legitimate place in the room.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0;border:1px solid rgba(255,255,255,.2);border-radius:6px;overflow:hidden;margin-bottom:64px">
+      <div style="padding:clamp(28px,4vw,44px);border-right:1px solid rgba(255,255,255,.2)">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:#C8A95A;margin-bottom:14px">THE GOAL</div>
+        <p style="font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(20px,2.6vw,28px);line-height:1.25;margin:0;color:#fff">Not assimilation. Not performance. Greater command of how to enter, contribute, connect, and choose.</p>
+      </div>
+      <div style="padding:clamp(28px,4vw,44px);display:flex;align-items:center">
+        <p style="font-size:16px;line-height:1.7;margin:0;color:rgba(255,255,255,.78)">The experience helps participants show up as their strongest, most self‑aware selves while understanding the context, expectations, and possibilities within the spaces they enter.</p>
+      </div>
+    </div>
+
+    <p style="font-size:16px;color:rgba(255,255,255,.7);margin:0 0 28px">Once confidence is established, participants can:</p>
+    <ol style="list-style:none;padding:0;margin:0 0 72px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0 48px">
+      <sc-for list="{{ onceConfidence }}" as="row" hint-placeholder-count="8">
+        <li style="display:flex;gap:18px;align-items:baseline;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.14)">
+          <span style="font-family:'Unbounded';font-size:14px;color:#C8A95A;flex:none;min-width:26px">0{{ row.n }}</span>
+          <span style="font-size:16px;line-height:1.5;color:rgba(255,255,255,.9)">{{ row.text }}</span>
+        </li>
+      </sc-for>
+    </ol>
+
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:34px">THE PARTICIPANT JOURNEY</div>
+    <div style="display:flex;flex-wrap:wrap;gap:0;align-items:stretch;border-top:1px solid rgba(255,255,255,.2)">
+      <sc-for list="{{ journey }}" as="step" hint-placeholder-count="5">
+        <div style="flex:1 1 170px;min-width:150px;padding:28px 22px 30px;border-bottom:1px solid rgba(255,255,255,.2);border-right:1px solid rgba(255,255,255,.12);display:flex;flex-direction:column;gap:16px;background:{{ step.bg }}">
+          <span style="font-family:'Unbounded',sans-serif;font-size:34px;line-height:1;color:{{ step.num }}">0{{ step.n }}</span>
+          <span style="font-family:'Inter';font-weight:500;font-size:16px;line-height:1.3;color:{{ step.fg }}">{{ step.label }}</span>
+        </div>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 PROPOSED ENGAGEMENT — triptych ===== -->
+<section style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,124px) clamp(28px,6vw,72px)">
+  <span class="wm" style="top:44px;right:56px;font-size:clamp(120px,20vw,240px);color:rgba(11,30,63,.05)">03</span>
+  <div style="position:relative">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:22px;height:1px;background:#C8A95A"></span>PROPOSED ENGAGEMENT</div>
+    <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(30px,4.8vw,54px);line-height:1.04;letter-spacing:-1px;color:#0B1E3F;margin:0 0 24px">Three opportunities to connect</h2>
+    <p style="font-size:18px;line-height:1.75;max-width:720px;margin:0 0 52px;color:#3a4150">Together, the experiences move participants from access to confidence, from confidence to connection, and from connection to long‑term professional value.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;margin-bottom:60px">
+      <sc-for list="{{ components }}" as="c" hint-placeholder-count="3">
+        <figure style="margin:0;background:#F5F3EE;border-radius:6px;padding:clamp(24px,3vw,34px)">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:24px">
+            <div style="width:44px;height:44px;background:#0B1E3F;color:#C8A95A;font-family:'Unbounded';font-size:19px;display:flex;align-items:center;justify-content:center;border-radius:6px">{{ c.n }}</div>
+            <svg width="28" height="28" sc-camel-view-box="0 0 24 24" fill="none" stroke="#C8A95A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="{{ c.icon }}"></path></svg>
+          </div>
+          <figcaption style="padding:0">
+            <div style="font-family:'Unbounded',sans-serif;font-size:19px;line-height:1.2;color:#0B1E3F;margin-bottom:10px">{{ c.title }}</div>
+            <div style="font-size:15px;line-height:1.55;color:#5a6270">{{ c.sub }}</div>
+          </figcaption>
+        </figure>
+      </sc-for>
+    </div>
+
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:#0B1E3F;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:24px;height:2px;background:#C8A95A"></span>A PRACTICAL, CANDID FORMAT</div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px">
+      <sc-for list="{{ formatList }}" as="row" hint-placeholder-count="6">
+        <span style="display:inline-flex;align-items:center;gap:10px;border:1px solid rgba(11,30,63,.22);border-radius:9999px;padding:10px 18px;font-size:14.5px;color:#0B1E3F"><span style="width:6px;height:6px;background:#C8A95A;border-radius:50%"></span>{{ row }}</span>
+      </sc-for>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPONENT ONE (NYC) — split with plate ===== -->
+<section style="border-top:1px solid rgba(11,30,63,.1)">
+  <div style="max-width:1080px;margin:0 auto">
+    <div style="padding:clamp(56px,7vw,96px) clamp(28px,6vw,72px) 0;background:#fff">
+      <div style="display:inline-flex;align-items:center;background:#0B1E3F;color:#C8A95A;border-radius:9999px;padding:9px 20px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:2px;margin-bottom:24px">COMPONENT ONE · NEW YORK CITY</div>
+      <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(28px,4vw,46px);line-height:1.04;letter-spacing:-1px;color:#0B1E3F;margin:0 0 18px">Own the room.<br>Recognize the opportunity.</h2>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:1px;color:#8a909a;line-height:1.6;margin-bottom:22px">MAY 5, 2027 · EARLY STAGE ARTS PROFESSIONALS FELLOWSHIP, COHORT FOUR · INTERACTIVE IN‑PERSON WORKSHOP</div>
+      <p style="font-size:17px;line-height:1.7;margin:0;color:#3a4150;max-width:560px">This session combines practical guidance, facilitated discussion, scenarios, reflection, and candid mentorship conversation about the dynamics participants may encounter in the arts and cultural sector.</p>
+    </div>
+  </div>
+  <div style="max-width:1080px;margin:0 auto;padding:clamp(48px,6vw,80px) clamp(28px,6vw,72px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px 52px;margin-bottom:52px">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:16px;display:flex;align-items:center;gap:10px"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#C8A95A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1zM9 12l2 2 4-4"></path></svg>CONFIDENCE AND BELONGING</div>
+        <ul style="list-style:none;padding:0;margin:0">
+          <sc-for list="{{ confidenceBelonging }}" as="row" hint-placeholder-count="7">
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(11,30,63,.08);font-size:15.5px;line-height:1.5;color:#2B303A"><span style="width:6px;height:6px;background:#C8A95A;margin-top:7px;flex:none"></span>{{ row }}</li>
+          </sc-for>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:16px;display:flex;align-items:center;gap:10px"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#C8A95A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8M16 11l2 2 4-4"></path></svg>PROFESSIONAL PRESENCE IN PRACTICE</div>
+        <ul style="list-style:none;padding:0;margin:0">
+          <sc-for list="{{ presencePractice }}" as="row" hint-placeholder-count="6">
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(11,30,63,.08);font-size:15.5px;line-height:1.5;color:#2B303A"><span style="width:6px;height:6px;background:#C8A95A;margin-top:7px;flex:none"></span>{{ row }}</li>
+          </sc-for>
+        </ul>
+      </div>
+    </div>
+    <div style="background:#F5F3EE;border-left:3px solid #C8A95A;padding:26px 30px">
+      <p style="font-size:16px;line-height:1.7;margin:0;color:#3a4150"><span style="color:#0B1E3F;font-weight:500">Relational skills as cultural capital.</span> Participants will leverage curiosity, attentiveness, emotional intelligence, situational awareness, conversational range, professional generosity, reliability, and follow‑through as essential professional assets.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY IT MATTERS — full-bleed pull quote ===== -->
+<section style="background:#F5F3EE;padding:clamp(64px,9vw,120px) clamp(28px,6vw,72px)">
+  <div style="max-width:1000px;margin:0 auto">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:26px">WHY IT MATTERS</div>
+    <p style="font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(24px,4vw,52px);line-height:1.14;letter-spacing:-1px;margin:0;color:#0B1E3F">In a relationship‑driven field, introductions, recommendations, collaborations, invitations, and informal conversations often <span style="color:#C8A95A">shape career trajectories.</span></p>
+  </div>
+</section>
+
+<!-- ===== REAL TALK MENTORSHIP ===== -->
+<section style="position:relative;background:#0B1E3F;color:#fff;padding:clamp(72px,10vw,124px) clamp(28px,6vw,72px);overflow:hidden">
+  <div style="position:relative;max-width:1080px;margin:0 auto">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:22px;height:1px;background:#C8A95A"></span>REAL‑TALK MENTORSHIP CONVERSATION</div>
+    <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(28px,4.4vw,50px);line-height:1.06;letter-spacing:-1px;margin:0 0 26px;max-width:900px">Name what it feels like to be the newest person in an established room.</h2>
+    <p style="font-size:18px;line-height:1.7;max-width:720px;margin:0 0 48px;color:rgba(255,255,255,.82)">This candid, facilitated conversation addresses the experience beneath the technique: intimidation, imposter feelings, unfamiliar social codes, power dynamics, and the pressure professionals of the global majority may feel to shrink or overperform.</p>
+    <ul style="list-style:none;padding:0;margin:0 0 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:0 48px">
+      <sc-for list="{{ realTalk }}" as="row" hint-placeholder-count="6">
+        <li style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:16px;line-height:1.5;color:rgba(255,255,255,.9)"><span style="width:7px;height:7px;background:#C8A95A;margin-top:7px;flex:none"></span>{{ row }}</li>
+      </sc-for>
+    </ul>
+    <div style="border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:clamp(26px,3.5vw,44px)">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:#C8A95A;margin-bottom:14px">THE AIM</div>
+      <p style="font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(18px,2.4vw,27px);line-height:1.3;margin:0;color:#fff">Participants leave with language for their experience, permission to take up space, and practical ways to move through uncertainty without surrendering identity.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== KNOWING ANOTHER PERSON ===== -->
+<section style="position:relative;max-width:1080px;margin:0 auto;padding:clamp(72px,10vw,124px) clamp(28px,6vw,72px)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:22px;height:1px;background:#C8A95A"></span>KNOWING ANOTHER PERSON</div>
+  <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(30px,4.8vw,54px);line-height:1.04;letter-spacing:-1px;color:#0B1E3F;margin:0 0 24px">From self‑promotion to genuine connection.</h2>
+  <p style="font-size:18px;line-height:1.75;max-width:720px;margin:0 0 44px;color:#3a4150">David Brooks’ <em>How to Know a Person</em> serves as a conceptual anchor. Participants consider what it means to become an “illuminator”: someone whose attention helps another person feel recognized rather than diminished.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:44px 52px;margin-bottom:48px">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:16px;display:flex;align-items:center;gap:10px"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#C8A95A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z"></path></svg>PARTICIPANTS WILL PRACTICE HOW TO</div>
+      <ul style="list-style:none;padding:0;margin:0">
+        <sc-for list="{{ illuminator }}" as="row" hint-placeholder-count="8">
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(11,30,63,.08);font-size:15.5px;line-height:1.5;color:#2B303A"><span style="width:6px;height:6px;background:#C8A95A;margin-top:7px;flex:none"></span>{{ row }}</li>
+        </sc-for>
+      </ul>
+    </div>
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:16px;display:flex;align-items:center;gap:10px"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#C8A95A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>RECOGNIZING AND SEIZING THE MOMENT</div>
+      <ul style="list-style:none;padding:0;margin:0">
+        <sc-for list="{{ seizeMoment }}" as="row" hint-placeholder-count="7">
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(11,30,63,.08);font-size:15.5px;line-height:1.5;color:#2B303A"><span style="width:6px;height:6px;background:#C8A95A;margin-top:7px;flex:none"></span>{{ row }}</li>
+        </sc-for>
+      </ul>
+    </div>
+  </div>
+  <div style="border-top:1px solid rgba(11,30,63,.12);padding-top:34px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#C8A95A;margin-bottom:14px">CORE SHIFT</div>
+    <p style="font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(19px,2.5vw,28px);line-height:1.3;margin:0;color:#0B1E3F;max-width:840px">The goal is not merely better conversation. It is greater perception, generosity, discernment, and trust.</p>
+  </div>
+</section>
+
+<!-- ===== RELATIONSHIPS THAT LAST ===== -->
+<section style="max-width:1080px;margin:0 auto;padding:0 clamp(28px,6vw,72px) clamp(72px,10vw,124px)">
+  <div style="background:#F5F3EE;border:1px solid rgba(11,30,63,.1);border-radius:6px;padding:clamp(36px,5vw,64px)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:16px">RELATIONSHIPS THAT LAST</div>
+    <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(28px,4vw,46px);line-height:1.04;letter-spacing:-1px;color:#0B1E3F;margin:0 0 20px">Build trust, not a contact list.</h2>
+    <p style="font-size:17px;line-height:1.75;max-width:720px;margin:0 0 40px;color:#3a4150">Relationship building is framed as an exchange of attention, ideas, perspective, support, information, and value, rather than a hunt for powerful contacts.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px 52px">
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:14px;display:flex;align-items:center;gap:10px"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#C8A95A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>MUTUALLY BENEFICIAL RELATIONSHIPS</div>
+        <ul style="list-style:none;padding:0;margin:0">
+          <sc-for list="{{ mutualRelationships }}" as="row" hint-placeholder-count="8">
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(11,30,63,.09);font-size:15px;line-height:1.5;color:#2B303A"><span style="width:6px;height:6px;background:#C8A95A;margin-top:7px;flex:none"></span>{{ row }}</li>
+          </sc-for>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:14px;display:flex;align-items:center;gap:10px"><svg width="16" height="16" sc-camel-view-box="0 0 24 24" fill="none" stroke="#C8A95A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex:none"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8M21 3v5h-5M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16M3 21v-5h5"></path></svg>SUSTAINING THE RELATIONSHIP</div>
+        <ul style="list-style:none;padding:0;margin:0">
+          <sc-for list="{{ sustaining }}" as="row" hint-placeholder-count="7">
+            <li style="display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid rgba(11,30,63,.09);font-size:15px;line-height:1.5;color:#2B303A"><span style="width:6px;height:6px;background:#C8A95A;margin-top:7px;flex:none"></span>{{ row }}</li>
+          </sc-for>
+        </ul>
+      </div>
+    </div>
+    <div style="border-top:1px solid rgba(11,30,63,.14);margin-top:36px;padding-top:28px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#C8A95A;margin-bottom:12px">THE TEST</div>
+      <p style="font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(18px,2.3vw,26px);line-height:1.3;margin:0;color:#0B1E3F">A strong introduction is a moment. A trusted professional relationship is an asset built over time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPONENT TWO LUNCHEON — split ===== -->
+<section style="background:#0B1E3F;color:#fff">
+  <div style="max-width:1080px;margin:0 auto;padding:clamp(64px,8vw,110px) clamp(28px,6vw,72px) 0">
+      <div style="display:inline-flex;align-items:center;background:#C8A95A;color:#0B1E3F;border-radius:9999px;padding:9px 20px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:2px;margin-bottom:24px">COMPONENT TWO · FACILITATED LUNCHEON</div>
+      <h2 style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:clamp(30px,4.6vw,56px);line-height:1;letter-spacing:-1.5px;margin:0 0 24px">The table as a professional <span style="color:#C8A95A">canvas</span></h2>
+      <p style="font-size:17px;line-height:1.7;max-width:640px;margin:0;color:rgba(255,255,255,.82)">The luncheon is an immediate opportunity to apply the workshop concepts. Dining etiquette is framed not as rigid rules, but as relational awareness made visible.</p>
+  </div>
+  <div style="max-width:1080px;margin:0 auto;padding:clamp(48px,6vw,84px) clamp(28px,6vw,72px)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:rgba(255,255,255,.6);margin-bottom:22px">THE EXPERIENCE MAY INCLUDE</div>
+    <ul style="list-style:none;padding:0;margin:0 0 52px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:0 48px">
+      <sc-for list="{{ luncheon }}" as="row" hint-placeholder-count="13">
+        <li style="display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.13);font-size:15.5px;line-height:1.5;color:rgba(255,255,255,.9)"><span style="width:7px;height:7px;background:#C8A95A;margin-top:7px;flex:none"></span>{{ row }}</li>
+      </sc-for>
+    </ul>
+    <div style="border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:clamp(26px,3.5vw,44px)">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:#C8A95A;margin-bottom:14px">THE OBJECTIVE</div>
+      <p style="font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(18px,2.4vw,27px);line-height:1.3;margin:0;color:#fff">Not perfection. Confidence, consideration, ease, and the ability to help everyone at the table feel respected and included.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPONENT THREE VIRTUAL ===== -->
+<section style="max-width:1080px;margin:0 auto;padding:clamp(72px,10vw,124px) clamp(28px,6vw,72px)">
+  <div style="display:inline-flex;align-items:center;background:#0B1E3F;color:#C8A95A;border-radius:9999px;padding:9px 20px;font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:2px;margin-bottom:24px">COMPONENT THREE · VIRTUAL ALUMNI EXPERIENCE</div>
+  <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(30px,4.8vw,54px);line-height:1.04;letter-spacing:-1px;color:#0B1E3F;margin:0 0 20px">From introduction to enduring connection.</h2>
+  <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:1px;color:#8a909a;margin-bottom:44px">WINTER · PROGRAM ALUMNI · INTERACTIVE VIRTUAL WORKSHOP</div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px 56px">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:22px">REFLECTION QUESTIONS</div>
+      <div style="display:flex;flex-direction:column;gap:0">
+        <sc-for list="{{ reflection }}" as="row" hint-placeholder-count="5">
+          <div style="padding:16px 0;border-bottom:1px solid rgba(11,30,63,.09);display:flex;gap:16px;align-items:flex-start">
+            <span style="font-family:'Unbounded';font-size:20px;color:#C8A95A;line-height:1;flex:none">―</span>
+            <span style="font-size:16px;line-height:1.5;color:#0B1E3F;font-style:italic">{{ row }}</span>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:22px">PROPOSED FOCUS AREAS</div>
+      <ul style="list-style:none;padding:0;margin:0">
+        <sc-for list="{{ focusAreas }}" as="row" hint-placeholder-count="9">
+          <li style="display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(11,30,63,.08);font-size:15.5px;line-height:1.5;color:#2B303A"><span style="width:6px;height:6px;background:#C8A95A;margin-top:7px;flex:none"></span>{{ row }}</li>
+        </sc-for>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INTERNATIONAL / BERLIN — full-bleed plate ===== -->
+<section style="position:relative;min-height:88vh;display:flex;flex-direction:column;justify-content:flex-end;background:#0B1E3F">
+  <div style="position:absolute;inset:0"><image-slot id="berlin-art" shape="rect" fit="cover" placeholder="Drop a Berlin / international art-fair image"></image-slot></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(11,30,63,.94) 0%,rgba(11,30,63,.35) 55%,rgba(11,30,63,.55) 100%);pointer-events:none"></div>
+  <div style="position:relative;pointer-events:none;color:#fff;max-width:1080px;margin:0 auto;width:100%;padding:clamp(56px,7vw,96px) clamp(28px,6vw,72px)">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px">INTERNATIONAL READINESS</div>
+    <h2 style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:clamp(30px,5vw,68px);line-height:.98;letter-spacing:-2px;margin:0 0 24px">Passport to presence.<br><span style="color:#C8A95A">International travel best practices.</span></h2>
+    <p style="font-size:18px;line-height:1.7;max-width:700px;margin:0;color:rgba(255,255,255,.9)">Because international travel is a culminating element of the program, participants develop a flexible framework for entering unfamiliar cultural environments with humility, curiosity, observation, and respect.</p>
+  </div>
+</section>
+<section style="background:#0B1E3F;color:#fff;padding:clamp(48px,6vw,84px) clamp(28px,6vw,72px)">
+  <div style="max-width:1080px;margin:0 auto">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#C8A95A;margin-bottom:24px;display:flex;align-items:center;gap:12px"><span style="width:24px;height:2px;background:#C8A95A"></span>TRAVEL AND CULTURAL COMPETENCY TOPICS</div>
+    <ul style="list-style:none;padding:0;margin:0 0 44px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 52px">
+      <sc-for list="{{ travelTopics }}" as="row" hint-placeholder-count="17">
+        <li style="display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.13);font-size:15px;line-height:1.5;color:rgba(255,255,255,.88)"><span style="width:6px;height:6px;background:#C8A95A;margin-top:7px;flex:none"></span>{{ row }}</li>
+      </sc-for>
+    </ul>
+    <div style="border-left:3px solid #C8A95A;padding:8px 0 8px 26px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#C8A95A;margin-bottom:10px">TRANSFERABLE READINESS</div>
+      <p style="font-size:17px;line-height:1.6;margin:0;color:rgba(255,255,255,.9);max-width:720px">Participants leave with adaptable practices that travel with them, even when the destination, culture, or professional setting changes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OUTCOMES ===== -->
+<section style="position:relative;max-width:1200px;margin:0 auto;padding:clamp(72px,10vw,124px) clamp(28px,6vw,72px);overflow:hidden">
+  <span class="wm" style="top:56px;right:56px;font-size:clamp(120px,18vw,220px);color:rgba(11,30,63,.05)">14</span>
+  <div style="position:relative">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:22px;height:1px;background:#C8A95A"></span>PARTICIPANT OUTCOMES</div>
+    <h2 style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:clamp(34px,6vw,84px);line-height:.98;letter-spacing:-2px;color:#0B1E3F;margin:0 0 18px">What participants<br>walk away <span style="color:#C8A95A">with.</span></h2>
+    <p style="font-size:17px;line-height:1.7;max-width:640px;margin:0 0 52px;color:#3a4150">Following the engagement, participants carry a durable set of instincts and habits:</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px">
+      <sc-for list="{{ outcomes }}" as="row" hint-placeholder-count="14">
+        <div style="display:flex;gap:14px;align-items:flex-start;background:#F5F3EE;border-radius:6px;padding:20px 22px">
+          <svg width="18" height="18" sc-camel-view-box="0 0 24 24" fill="none" stroke="#C8A95A" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span style="font-size:15px;line-height:1.45;color:#2B303A">{{ row }}</span>
+        </div>
+      </sc-for>
+    </div>
+    <div style="border-top:1px solid rgba(11,30,63,.14);margin-top:52px;padding-top:32px">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#C8A95A;margin-bottom:14px">THE PARTICIPANT EXPERIENCE</div>
+      <p style="font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(18px,2.4vw,27px);line-height:1.3;margin:0;color:#0B1E3F;max-width:880px">Candid without being shaming. Polished without being rigid. Practical without asking participants to minimize their identities.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ROI ===== -->
+<section style="max-width:1080px;margin:0 auto;padding:clamp(64px,9vw,120px) clamp(28px,6vw,72px)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:22px;height:1px;background:#C8A95A"></span>RETURN ON INVESTMENT</div>
+  <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(30px,4.8vw,54px);line-height:1.04;letter-spacing:-1px;color:#0B1E3F;margin:0 0 24px">The return on your investment.</h2>
+  <p style="font-size:18px;line-height:1.75;max-width:740px;margin:0 0 48px;color:#3a4150">Your organization’s return is measured in one currency: the success of your participants. Every scholarship dollar, every curated room, every trip to Berlin is an investment whose value is realized only when participants convert access into relationships, and relationships into careers. This engagement exists to protect and multiply that return.</p>
+
+  <div style="background:#C8A95A;color:#0B1E3F;border-radius:6px;padding:clamp(30px,4vw,52px);margin-bottom:56px">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:rgba(11,30,63,.65);margin-bottom:28px">THE ROI EQUATION</div>
+    <div style="display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;font-family:'Unbounded',sans-serif;font-size:clamp(16px,2.2vw,26px);color:#0B1E3F">
+      <span>Access</span><span style="color:#fff;font-size:1.3em">+</span>
+      <span>Confidence</span><span style="color:#fff;font-size:1.3em">+</span>
+      <span>Relational tools</span>
+      <span style="color:#fff;font-size:1.3em">=</span>
+      <span style="color:#fff">Greater participant success</span>
+    </div>
+    <p style="font-size:15px;line-height:1.6;margin:26px 0 0;color:rgba(11,30,63,.75);max-width:660px">… and stronger evidence of program impact for boards, funders, partners, and future supporters.</p>
+  </div>
+
+  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:24px;height:2px;background:#C8A95A"></span>ORGANIZATIONAL VALUE</div>
+  <ul style="list-style:none;padding:0;margin:0 0 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px">
+    <sc-for list="{{ orgValue }}" as="row" hint-placeholder-count="7">
+      <li style="background:#F5F3EE;border-radius:6px;padding:28px 30px">
+        <span style="display:block;font-family:'Unbounded';font-size:30px;line-height:1;color:#C8A95A;margin-bottom:16px">{{ row.title }}</span>
+        <span style="font-size:15.5px;line-height:1.6;color:#2B303A">{{ row.text }}</span>
+      </li>
+    </sc-for>
+  </ul>
+
+  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:24px;height:2px;background:#C8A95A"></span>PROPOSED MEASURES OF IMPACT</div>
+  <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 52px">
+    <sc-for list="{{ measures }}" as="row" hint-placeholder-count="8">
+      <li style="display:flex;gap:12px;align-items:flex-start;padding:12px 0;border-bottom:1px solid rgba(11,30,63,.08);font-size:15.5px;line-height:1.5;color:#2B303A"><span style="width:6px;height:6px;background:#C8A95A;margin-top:7px;flex:none"></span>{{ row }}</li>
+    </sc-for>
+  </ul>
+</section>
+
+<!-- ===== DELIVERABLES ===== -->
+<section style="background:#F5F3EE;padding:clamp(72px,10vw,124px) clamp(28px,6vw,72px)">
+  <div style="max-width:1080px;margin:0 auto">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:22px;height:1px;background:#C8A95A"></span>DELIVERABLES</div>
+    <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(30px,4.8vw,54px);line-height:1.04;letter-spacing:-1px;color:#0B1E3F;margin:0 0 40px">A customized engagement, not an off‑the‑shelf workshop.</h2>
+    <ul style="list-style:none;padding:0;margin:0 0 64px;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:0 52px">
+      <sc-for list="{{ deliverables }}" as="row" hint-placeholder-count="11">
+        <li style="display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(11,30,63,.12)">
+          <svg width="17" height="17" sc-camel-view-box="0 0 24 24" fill="none" stroke="#0B1E3F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="flex:none;margin-top:2px"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span style="font-size:15.5px;line-height:1.5;color:#2B303A">{{ row }}</span>
+        </li>
+      </sc-for>
+    </ul>
+    <div style="border-top:1px solid rgba(11,30,63,.16);padding-top:44px">
+      <h3 style="font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(22px,3vw,34px);line-height:1.15;color:#0B1E3F;margin:0 0 28px">Why Ever‑Appropriate Etiquette Institute</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px 48px;max-width:960px">
+        <p style="font-size:16px;line-height:1.7;margin:0;color:#3a4150">For more than a decade, Ever‑Appropriate Etiquette Institute has helped emerging leaders navigate consequential rooms with confidence, awareness, and authenticity, through work with corporations, universities, schools, and civic organizations.</p>
+        <p style="font-size:16px;line-height:1.7;margin:0;color:#3a4150">Programs extend beyond traditional etiquette to strengthen professional presence, relational intelligence, situational awareness, cultural competency, and dining confidence.</p>
+        <p style="font-size:16px;line-height:1.7;margin:0;color:#3a4150">Founder and President <span style="color:#0B1E3F;font-weight:500">Naretha Hopson</span> also leads the Vanguard Collective, an arts and culture community expanding access for emerging collectors and future patrons. Her museum and arts service places her regularly in the rooms participants are learning to navigate.</p>
+        <p style="font-size:16px;line-height:1.7;margin:0;color:#3a4150">EAEI is especially relevant for talented people who may not have inherited access to the social codes and networks that shape opportunity. The material comes from lived fluency, not simply textbook protocol.</p>
+      </div>
+      <div style="background:#0B1E3F;border-radius:6px;padding:clamp(28px,3.5vw,48px);margin-top:44px">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2px;color:#C8A95A;margin-bottom:16px">THE EVER‑APPROPRIATE PROMISE</div>
+        <p style="font-family:'Unbounded',sans-serif;font-weight:400;font-size:clamp(19px,2.6vw,30px);line-height:1.28;margin:0;color:#fff">Participants gain the confidence to enter important rooms fully, the awareness to recognize what is happening around them, and the relational tools to transform access into meaningful professional possibility.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== INVESTMENT & NEXT STEPS ===== -->
+<section style="max-width:1080px;margin:0 auto;padding:clamp(72px,10vw,124px) clamp(28px,6vw,72px)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:22px;height:1px;background:#C8A95A"></span>INVESTMENT</div>
+  <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(30px,4.8vw,54px);line-height:1.04;letter-spacing:-1px;color:#0B1E3F;margin:0 0 24px">Final scope and investment.</h2>
+  <p style="font-size:18px;line-height:1.75;max-width:720px;margin:0 0 44px;color:#3a4150">Investment reflects the scope of each engagement. Final scope is confirmed against the details below.</p>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:52px">
+    <div style="background:#0B1E3F;border-radius:6px;padding:32px 30px;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:1.5px;color:#C8A95A">IN-PERSON WORKSHOP</div>
+        <svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="#C8A95A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+      </div>
+      <div style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(34px,4.6vw,52px);line-height:1;color:#fff">$10,000</div>
+      <div style="font-size:15px;line-height:1.5;color:rgba(255,255,255,.75)">One full day in New York, including the facilitated etiquette luncheon.</div>
+    </div>
+    <div style="background:#F5F3EE;border-radius:6px;padding:32px 30px;display:flex;flex-direction:column;gap:14px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:1.5px;color:#8a909a">VIRTUAL ALUMNI SESSION</div>
+        <svg width="22" height="22" sc-camel-view-box="0 0 24 24" fill="none" stroke="#C8A95A" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h20v14H2zM8 21h8M12 17v4"></path></svg>
+      </div>
+      <div style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(34px,4.6vw,52px);line-height:1;color:#0B1E3F">$7,500</div>
+      <div style="font-size:15px;line-height:1.5;color:#5a6270">Interactive virtual workshop for program alumni, scheduled in winter.</div>
+    </div>
+  </div>
+  <div style="background:#F5F3EE;border:1px solid rgba(11,30,63,.1);border-radius:6px;padding:26px 30px">
+    <p style="font-size:15.5px;line-height:1.7;margin:0;color:#3a4150">Luncheon venue and catering are typically arranged and covered by the host organization. Ever‑Appropriate Etiquette Institute can advise on venue selection, table setup, and service flow. The client is responsible for travel, lodging, and related expenses.</p>
+  </div>
+</section>
+
+<!-- ===== ABOUT / BIO ===== -->
+<section style="background:#F5F3EE;border-top:1px solid rgba(11,30,63,.1)">
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr))">
+    <div style="position:relative;align-self:start;aspect-ratio:2/3;min-height:480px;background:#0B1E3F">
+      <image-slot id="naretha-portrait" shape="rect" fit="contain" src="assets/naretha-portrait.jpg" placeholder="Drop a portrait of Naretha Hopson"></image-slot>
+      <div style="position:absolute;left:18px;bottom:18px;background:#0B1E3F;color:#C8A95A;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:1.5px;padding:10px 16px;border-radius:6px;pointer-events:none">15 YEARS · POLISH COACH</div>
+    </div>
+    <div style="padding:clamp(56px,7vw,100px) clamp(28px,5vw,64px)">
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:22px;height:1px;background:#C8A95A"></span>ABOUT</div>
+      <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(30px,4.6vw,52px);line-height:1.02;letter-spacing:-1.5px;color:#0B1E3F;margin:0 0 10px">Naretha Hopson</h2>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#8a909a;margin-bottom:30px">FOUNDER &amp; PRESIDENT · EVER‑APPROPRIATE ETIQUETTE INSTITUTE</div>
+      <p style="font-size:16px;line-height:1.7;margin:0 0 16px;color:#3a4150;max-width:620px">Naretha Hopson is an international speaker, author, and lifestyle coach. She is the founder and president of Ever‑Appropriate Etiquette Institute (EAEI), which empowers youth and professionals to “polish” their personal and professional lives through modern and relevant refinement and confidence training. Clients include Wells Fargo, Regional Business Council, Marriott International, and the University of Wisconsin. Her book, <em>Ever‑Appropriate Etiquette: 5 Steps to the Professional Presence that Pays</em>, is leveraged as professional‑development curriculum in schools across the nation.</p>
+      <p style="font-size:16px;line-height:1.7;margin:0 0 16px;color:#3a4150;max-width:620px">Ms. Hopson is a graduate of the FOCUS St. Louis Leadership St. Louis program (LSL), Class ’10–’11, and participated in the Consortium for Leadership Development (CLD). She has received many recognitions, including the Emerson Young Leader’s Award and the Drum Major of Service Award presented by the Ferguson‑Florissant School District. Naretha was honored to receive a service recognition from the White House.</p>
+      <p style="font-size:16px;line-height:1.7;margin:0 0 16px;color:#3a4150;max-width:620px">Service is a cornerstone of Ms. Hopson’s values. A St. Louis native, she has served on the boards of directors and committees of many organizations, including the Charmaine Chapman Society Cabinet of The United Way, Special Friends Mentoring, Urban Sprouts Child Development Center, and the St. Louis Crisis Nursery. Her mayoral appointments have included Mayor Slay’s Vanguard Cabinet and Commissioner of the Zoo‑Museum District, Botanical Gardens Subdistrict. Naretha is an inaugural member of Regional Business Council Leadership 100.</p>
+      <p style="font-size:16px;line-height:1.7;margin:0;color:#3a4150;max-width:620px"><span style="color: rgb(11, 30, 63); font-weight: 500;">The Arts.</span> Naretha passionately believes that exposure to the arts is necessary for a fully enriched life. She is the founder of Art Sparks and The Vanguard Collective, which expose youth and young adults to the multifaceted world of the arts, with a mission to cultivate future collectors and patrons. She has forged partnerships with artists and organizations such as the St. Louis Art Museum, where she serves on the Friends Board, the Regional Business Council, and was recenly invited to join the COUNTERPUBLIC Board of Directors. A proud member of the Archway (MO) Chapter of The Links, Incorporated, she chairs its Arts Committee, serves on the Community Engagement and Inclusion Council for Opera Theatre St. Louis, and is a board member of the St. Louis Visionary (VIZ) Awards, honoring women in the arts. Her hobbies include the arts, golf, and travel.</p>
+    </div>
+  </div>
+  <div style="max-width:1080px;margin:0 auto;padding:clamp(40px,5vw,72px) clamp(28px,6vw,72px);display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:36px 48px">
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:16px">SELECT CLIENTS</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <sc-for list="{{ bioClients }}" as="row" hint-placeholder-count="4">
+          <span style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(11,30,63,.22);border-radius:9999px;padding:8px 15px;font-size:13.5px;color:#0B1E3F;background:#fff"><span style="width:6px;height:6px;background:#C8A95A;border-radius:50%"></span>{{ row }}</span>
+        </sc-for>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:16px">RECOGNITION</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <sc-for list="{{ bioRecognition }}" as="row" hint-placeholder-count="4">
+          <span style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(11,30,63,.22);border-radius:9999px;padding:8px 15px;font-size:13.5px;color:#0B1E3F;background:#fff"><span style="width:6px;height:6px;background:#C8A95A;border-radius:50%"></span>{{ row }}</span>
+        </sc-for>
+      </div>
+    </div>
+    <div>
+      <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:#0B1E3F;margin-bottom:16px">IN THE ARTS</div>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <sc-for list="{{ bioArts }}" as="row" hint-placeholder-count="4">
+          <span style="display:inline-flex;align-items:center;gap:9px;border:1px solid rgba(11,30,63,.22);border-radius:9999px;padding:8px 15px;font-size:13.5px;color:#0B1E3F;background:#fff"><span style="width:6px;height:6px;background:#C8A95A;border-radius:50%"></span>{{ row }}</span>
+        </sc-for>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== NEXT STEPS ===== -->
+<section style="max-width:1080px;margin:0 auto;padding:clamp(72px,10vw,124px) clamp(28px,6vw,72px)">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:2.5px;color:#C8A95A;margin-bottom:20px;display:flex;align-items:center;gap:12px"><span style="width:22px;height:1px;background:#C8A95A"></span>NEXT STEPS</div>
+  <h2 style="font-family:'Unbounded',sans-serif;font-weight:500;font-size:clamp(30px,4.8vw,54px);line-height:1.04;letter-spacing:-1px;color:#0B1E3F;margin:0 0 48px">Four steps to reserve<br>May 5, <span style="color:#C8A95A">2027.</span></h2>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:28px">
+    <sc-for list="{{ nextSteps }}" as="s" hint-placeholder-count="4">
+      <div style="border-top:2px solid #C8A95A;padding-top:22px">
+        <div style="font-family:'Unbounded',sans-serif;font-size:30px;line-height:1;color:#0B1E3F;margin-bottom:16px">0{{ s.n }}</div>
+        <div style="font-size:15px;line-height:1.6;color:#3a4150">{{ s.text }}</div>
+      </div>
+    </sc-for>
+  </div>
+</section>
+
+<!-- ===== CLOSING ===== -->
+<section style="position:relative;background:#0B1E3F;color:#fff;padding:clamp(80px,11vw,150px) clamp(28px,6vw,72px);overflow:hidden">
+  <span class="wm" style="bottom:-30px;left:50%;transform:translateX(-50%);font-size:clamp(140px,26vw,340px);color:rgba(255,255,255,.04)">EVER‑</span>
+  <div style="position:relative;max-width:1000px;margin:0 auto;text-align:center">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:3px;color:#C8A95A;margin-bottom:40px">OWN THE SEAT · RECOGNIZE THE OPPORTUNITY</div>
+    <h2 style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:clamp(30px,5.5vw,66px);line-height:1;letter-spacing:-1.5px;margin:0 0 44px">Seize the moment.<br>Build the relationship.</h2>
+    <div style="width:64px;height:2px;background:#C8A95A;margin:0 auto 44px"></div>
+    <div style="font-family:'Inter';font-size:18px;color:#fff;margin-bottom:10px">Naretha Hopson</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:1.5px;color:rgba(255,255,255,.6);margin-bottom:26px">FOUNDER AND PRESIDENT</div>
+    <div style="font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:1px;color:rgba(255,255,255,.85);display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center">
+      <a href="https://ever-appropriate.com" style="color:#C8A95A">ever‑appropriate.com</a>
+      <span style="color:rgba(255,255,255,.3)">·</span>
+      <a href="mailto:nhopson@ever-appropriate.com" style="color:#fff">nhopson@ever‑appropriate.com</a>
+      <span style="color:rgba(255,255,255,.3)">·</span>
+      <span>314.744.9383</span>
+    </div>
+  </div>
+</section>
+
+</article>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script="">
+class Component extends DCLogic {
+  componentDidMount() {
+    if (this._anim) return; this._anim = true;
+    if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    const root = document.querySelector('article');
+    if (!root) return;
+    const EASE = 'cubic-bezier(0.4,0,0.2,1)';
+    const isSkip = (el) => {
+      if (el.classList && el.classList.contains('wm')) return true;
+      const pos = (el.style && el.style.position) || '';
+      return pos === 'absolute' || pos === 'fixed';
+    };
+    // Break a section into reveal units: descend through 1-2-child wrappers, stop at leaves or list containers
+    const unitsOf = (el, depth) => {
+      const kids = Array.from(el.children).filter(k => !isSkip(k));
+      if (depth >= 2 || kids.length === 0 || kids.length >= 3) return [el];
+      return kids.flatMap(k => unitsOf(k, depth + 1));
+    };
+    const groups = new Map(); // observed target -> [elements to reveal in stagger]
+    for (const sec of root.children) {
+      if (sec.tagName !== 'SECTION') continue;
+      const units = Array.from(sec.children).filter(k => !isSkip(k)).flatMap(k => unitsOf(k, 0));
+      for (const u of units) {
+        const kids = Array.from(u.children).filter(k => !isSkip(k));
+        const els = kids.length >= 3 ? kids : [u];
+        groups.set(u, els);
+        for (const el of els) {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(22px)';
+        }
+      }
+    }
+    // Bars grow from the baseline
+    for (const bar of root.querySelectorAll('[data-anim="bar"]')) {
+      bar.style.transformOrigin = 'bottom';
+      bar.style.transform = 'scaleY(0)';
+    }
+    // Batch counter: everything entering in the same tick gets sequenced delays
+    let batch = 0, batchReset = null;
+    const reveal = (els) => {
+      const base = batch * 110; batch += 1;
+      clearTimeout(batchReset); batchReset = setTimeout(() => { batch = 0; }, 120);
+      els.forEach((el, i) => {
+        const d = base + i * 55;
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          el.style.transition = 'opacity .65s ' + EASE + ' ' + d + 'ms, transform .65s ' + EASE + ' ' + d + 'ms';
+          el.style.opacity = '1';
+          el.style.transform = 'none';
+          const bar = el.matches && el.matches('[data-anim="bar"]') ? el : el.querySelector && el.querySelector('[data-anim="bar"]');
+          if (bar) {
+            bar.style.transition = 'transform .8s ' + EASE + ' ' + (d + 180) + 'ms';
+            bar.style.transform = 'scaleY(1)';
+          }
+        }));
+      });
+    };
+    const io = new IntersectionObserver((entries) => {
+      for (const en of entries) {
+        if (!en.isIntersecting) continue;
+        io.unobserve(en.target);
+        reveal(groups.get(en.target) || [en.target]);
+      }
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    for (const target of groups.keys()) io.observe(target);
+  }
+  renderVals() {
+    return {
+      figures: [
+        { big: "10", label: "MONTH FELLOWSHIP" },
+        { big: "04", label: "COHORT · EARLY-STAGE" },
+        { big: "03", label: "CONNECTED EXPERIENCES" },
+        { big: "'27", label: "MAY 5 · NEW YORK CITY" },
+      ],
+      conversionSteps: [
+        { n: 1, label: "Access", h: "150px", bg: "rgba(11,30,63,.10)", fg: "#0B1E3F" },
+        { n: 2, label: "Engagement", h: "200px", bg: "rgba(11,30,63,.22)", fg: "#0B1E3F" },
+        { n: 3, label: "Relationship", h: "250px", bg: "rgba(11,30,63,.55)", fg: "#ffffff" },
+        { n: 4, label: "Opportunity", h: "300px", bg: "#0B1E3F", fg: "#C8A95A" },
+      ],
+      ecosystem: [
+        "Artists and curators",
+        "Collectors, patrons and philanthropists",
+        "Museum directors and senior leaders",
+        "Gallerists and funders",
+        "Institutional and international partners",
+      ],
+      journey: [
+        { n: 1, label: "Own the seat", bg: "transparent", fg: "#ffffff", num: "#C8A95A" },
+        { n: 2, label: "Recognize the opportunity", bg: "rgba(200,169,90,.08)", fg: "#ffffff", num: "#C8A95A" },
+        { n: 3, label: "Seize the moment", bg: "rgba(200,169,90,.18)", fg: "#ffffff", num: "#C8A95A" },
+        { n: 4, label: "Build the relationship", bg: "rgba(200,169,90,.34)", fg: "#ffffff", num: "#0B1E3F" },
+        { n: 5, label: "Sustain the connection", bg: "#C8A95A", fg: "#0B1E3F", num: "#0B1E3F" },
+      ],
+      onceConfidence: [
+        { n: 1, text: "Own their seat at the table" },
+        { n: 2, text: "Recognize opportunity and seize the moment" },
+        { n: 3, text: "Begin and sustain meaningful conversations" },
+        { n: 4, text: "Build relationships across age, culture, influence, and wealth" },
+        { n: 5, text: "Follow up in ways that strengthen trust" },
+      ],
+      components: [
+        { n: 1, title: "In-Person Workshop", sub: "Professional presence, relational intelligence, and candid mentorship conversation.", icon: "M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" },
+        { n: 2, title: "Facilitated Etiquette Luncheon", sub: "The table as a live professional practice environment.", icon: "M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2M7 2v20M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3zM21 15v7" },
+        { n: 3, title: "Virtual Alumni Session", sub: "Sustaining relationships across time, distance, and career transitions.", icon: "M2 3h20v14H2zM8 21h8M12 17v4" },
+      ],
+      formatList: [
+        "Real-talk discussion grounded in arts-sector and social realities",
+        "Scenarios and professional judgment challenges",
+        "Conversation and follow-up practice",
+        "International readiness and cultural competency",
+      ],
+      confidenceBelonging: [
+        "Move through intimidation without pretending it does not exist",
+        "Separate wealth, title, or institutional power from personal worth",
+        "Read a room and make the first ninety seconds count",
+        "Recover gracefully from awkward or imperfect moments",
+      ],
+      presencePractice: [
+        "Introduce oneself and others with confidence across levels of influence",
+        "Join and exit conversations gracefully without appearing transactional",
+        "Use body language, voice, and appearance to communicate intention",
+        "Identify and articulate the value one already brings to the room",
+      ],
+      realTalk: [
+        "Name the unwritten expectations that often go unexplained",
+        "Distinguish adaptation and discernment from losing authenticity",
+        "Discuss how to take up space without overcorrecting",
+        "Treat each interaction, even an imperfect one, as practice rather than a verdict",
+      ],
+      illuminator: [
+        "Become an illuminator who helps others feel seen and valued",
+        "Listen to understand rather than waiting to respond",
+        "Ask questions that invite stories rather than rehearsed small talk",
+        "Become memorable through attentiveness rather than performance",
+      ],
+      seizeMoment: [
+        "Enter an existing conversation appropriately",
+        "Introduce oneself without delivering a résumé",
+        "Ask for insight without immediately asking for a favor",
+        "Exit a conversation with confidence and grace",
+      ],
+      mutualRelationships: [
+        "Approach people as human beings rather than opportunities",
+        "Lead by adding value before making an ask",
+        "Demonstrate genuine interest in another person's work",
+        "Understand the difference between access and entitlement",
+      ],
+      sustaining: [
+        "Send thoughtful, specific follow-up messages",
+        "Follow up without immediately making an ask",
+        "Maintain contact across time and distance",
+        "Become someone others are comfortable recommending",
+      ],
+      luncheon: [
+        "Reading seating cues and navigating place settings",
+        "Understanding host and guest responsibilities",
+        "Ordering and managing dietary needs professionally",
+        "Participating in conversation while dining",
+        "Including quieter guests at the table",
+        "Engaging with servers and venue staff respectfully",
+        "Knowing when business conversation should begin",
+      ],
+      reflection: [
+        "Which relationships have continued?",
+        "Which introductions became collaborations, mentorships, or opportunities?",
+        "Where did confidence or uncertainty influence follow-through?",
+        "What made certain relationships easier or harder to sustain?",
+      ],
+      focusAreas: [
+        "Conducting a professional relationship audit",
+        "Reconnecting after a period of silence",
+        "Following up after conferences, art fairs, and cultural events",
+        "Staying visible without becoming performative",
+        "Developing reciprocal mentorship and peer relationships",
+      ],
+      travelTopics: [
+        "Researching the cultural and professional context before departure",
+        "Understanding that U.S. social and workplace norms are not universal",
+        "Observing before assuming",
+        "Respecting differences in communication style and personal space",
+        "Navigating formality, titles, greetings, and punctuality",
+        "Representing oneself and the sponsoring organization abroad",
+        "Conduct at art fairs, galleries, receptions, and hosted events",
+        "Following up with international contacts after returning home",
+      ],
+      outcomes: [
+        "A settled confidence entering unfamiliar, high-stakes rooms, grounded in skill rather than bravado",
+        "Full ownership of their seat at the table, and the presence to keep it",
+        "A working fluency in the social language of collectors, patrons, and museum leadership, at home and abroad",
+        "The Illuminator's toolkit: questions, listening habits, and conversational moves that make others feel seen",
+        "Command of dining, reception, travel, and dress etiquette for every setting, so attention goes to people rather than protocol",
+        "The instinct to recognize opportunity in real time, and the readiness to seize the moment",
+        "A personal system for building and sustaining mutually beneficial relationships across months and years, not moments",
+        "The reflex to add value first, with a clear sense of what they uniquely bring to any exchange",
+        "The composure to resolve conflict and recover from missteps without losing the relationship or their confidence",
+        "A growth mindset toward every room: each event, introduction, and even each stumble becomes practice rather than a verdict",
+      ],
+      orgValue: [
+        { title: "01", text: "Access converts. Rooms you create get used. Participants stop standing at the edges of the receptions you worked hard to fill and start leaving with names, follow-ups, and genuine connections." },
+        { title: "02", text: "Your partners feel it. The collectors, patrons, and museum leaders you convene experience your participants as confident, gracious, and memorable, which strengthens their willingness to keep showing up for your program." },
+        { title: "03", text: "Your brand travels. In Berlin, participants travel well and represent your organization on an international stage with polish, extending your reputation beyond your own rooms." },
+        { title: "04", text: "The network compounds. Alumni who know how to sustain relationships remain connected to your organization and to one another, compounding the value of every cohort that follows." },
+        { title: "05", text: "The story writes itself. Confident, connected alumni become your most persuasive case for support: living proof for funders and boards that the program changes trajectories." },
+      ],
+      measures: [
+        "Pre- and post-session confidence measures",
+        "Follow-up communication completed after program events",
+        "New mentor, peer, collector, or institutional relationships developed",
+        "Increased participation at receptions, dinners, and networking opportunities",
+        "Selected impact narratives for boards, donors, and partners",
+      ],
+      deliverables: [
+        "Planning and alignment consultation",
+        "Customized in-person workshop for Cohort Four",
+        "Facilitated etiquette luncheon experience",
+        "Customized virtual alumni workshop",
+        "Relationship-building and follow-up tools",
+        "Participant-facing presentation deck and digital resources",
+        "Pre- and post-session confidence measures",
+      ],
+      scopeItems: [
+        "Length of the in-person workshop",
+        "Number of cohort participants",
+        "Luncheon format and venue responsibilities",
+        "Participant materials and deck specifications",
+        "Travel, lodging, and related expenses",
+      ],
+      bioClients: [
+        "Wells Fargo",
+        "Marriott International",
+        "Regional Business Council",
+        "University of Wisconsin",
+      ],
+      bioRecognition: [
+        "White House Service Recognition",
+        "Emerson Young Leader's Award",
+        "Drum Major of Service Award",
+        "RBC Leadership 100 (inaugural)",
+      ],
+      bioArts: [
+        "St. Louis Art Museum Friends Board",
+        "Opera Theatre St. Louis Council",
+        "The Links, Inc. — Arts Committee Chair",
+        "St. Louis Visionary (VIZ) Awards",
+      ],
+      nextSteps: [
+        { n: 1, text: "Confirm cohort size, session duration, venue, and Berlin itinerary details to incorporate" },
+        { n: 2, text: "Confirm the winter date and anticipated alumni attendance" },
+        { n: 3, text: "Finalize participant materials and presentation-deck requirements" },
+        { n: 4, text: "Execute the agreement and deposit to reserve May 5, 2027" },
+      ],
+    };
+  }
+}
+</script>
+</body></html>
